@@ -1,0 +1,166 @@
+<!-- Every tag that has a body is contained in a box(invisible and rectangle)
+
+    Block-level tags - the content of the block-level tags take up the entired width of the line of the body.
+
+        -Some of the tags that are all block-level
+
+            h1-h6, p, ul, ol, li
+
+    Inline- level tags - does not take any space of the block (rectange), rather it just inserted within a block-level tags
+        -Some of the tags are all inline-leve tags
+
+            a, img, input, label
+
+-->
+
+<!-- We can set a Block-level tags to be Inline-Level tags and vias-versa, using CSS -->
+
+    <ul>
+        <li>blah</li>
+        <li>bloh</li>
+        <li>bluh</li>
+    </ul>
+
+
+    ul li {
+
+    display: inline;
+
+    }
+<!-- This is what is going to be display in the browser -->
+    blah bloh bluh
+
+
+<!-- Understanding The Box Model
+
+    Why do the Block-Level tags have spaces between two tags (when we have h2 and h3 titles, these tags creates some space in between when looking in the browser)
+
+    - box-model is a way to the borders and spacing between the boxes of each tag.
+
+        * there are 4 parts of the box model:
+
+            1) Content area
+                -contains the the content(text)
+                    ** content area will only take up as much vertically vertically space as it needs to display the text
+
+
+            2) Padding
+                -is added to the top, right, bottom, or left of the content area
+
+            3) Border
+                - Border can be apply if we want to out side the padding(but it invisible if we dont apply color)
+
+            4) Margin
+                -is a space that can be added to top,righ, bottom, left of the border
+
+    -Calculating the size of the box
+        * If all the properties are set we can calculate by adding
+            - content area width + padding left + padding right + margin left + margin right
+
+    -We can control these 4 properties in CSS
+        ex:
+-->
+    h2 {
+
+    padding-top: 6px;
+    padding-right: 3px;
+    padding-bottom: 0;
+    padding-left: 0;
+
+    }
+
+<!-- Or  all at once in clockwise-->
+
+    h2{
+
+        padding: 6px 3px 0 0;
+        <!--         top right bottom left-->
+
+    }
+
+    <!-- Border, this CSS  applies to all sides-->
+
+        h2{
+
+            border-with: 6px;
+            border-style: solid;
+            border-color: black;
+
+        }
+
+<!-- Or shorter Padding version-->
+
+        h2{
+
+            border: 6px solid black;
+            <!--       width style color-->
+        }
+
+<!-- OR If we want to just apply Border in one side-->
+
+        h2{
+
+            border-bottom: 6px solid black;
+            <!--                   width style color-->
+
+        }
+
+<!-- Margin works just like padding-->
+        h2{
+
+            margin-left: 6px;
+            margin-right: 0;
+            margin-bottom: 6px;
+            margin-left: 0;
+
+        }
+
+<!-- OR Margin Shorter version -->
+        h2{
+
+            margin: 6px 0 6px 0;
+            <!--       top right bottom left -->
+
+        }
+
+<!-- When to use padding?
+
+    Padding is used to control size of the container without adjusting the size of the content(text)
+
+-->
+
+<!-- When to use Margin
+
+    Margin is used to control spaces between container.
+
+-->
+
+<!-- Why the browers automatically set spaces when we load our html???
+
+
+    -The browser has CSS style by default
+        -thats Why We have to overwrite them
+            * because if we don't we will not know  what is affecting our style if we have a bug;  the browser or us.
+
+        add this to the very top of your CSS style file to reset default styles. - if you have more Block-Level tags add them here.
+-->
+html, body, h1, h2, h3, p, ol, ul, li, a{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+<!-- Step to start adding CSS to out HTML, they different approches to start
+
+    1) use padding to the body, to push every children away from the ages
+    2) we can set margin to headings to put vertical spaces between tags
+    3) border- not every heading needs boders,
+                    * the border is to close to text use
+                        -padding-bottom to push it down
+    4) We can use padding to indent
+
+
+
+
+
+-->
